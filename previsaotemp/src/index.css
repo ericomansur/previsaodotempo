@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.hover\:scale-102:hover {
+  transform: scale(1.02);
+}
+
+/* Weather Effects */
+@keyframes rain {
+  0% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+.rain-drop {
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  background: linear-gradient(transparent, #6b7280);
+  animation: rain linear infinite;
+}
+
+@keyframes snow {
+  0% {
+    transform: translateY(-10px) translateX(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(100vh) translateX(20px) rotate(360deg);
+  }
+}
+
+.snow-flake {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  animation: snow linear infinite;
+  filter: blur(1px);
+}
+
+@keyframes lightning {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  }
+  11% {
+    opacity: 1;
+  }
+  14% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  21% {
+    opacity: 1;
+  }
+  24% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.lightning {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.2);
+  animation: lightning 5s infinite;
+}
+
+/* Dark mode transition */
+.theme-transition {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
